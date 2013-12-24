@@ -9,6 +9,13 @@ namespace XamlSynthesizer.Behaviors
 
         public object Execute(object sender, object parameter)
         {
+            if (Song != null)
+            {
+                if (!Song.IsPlaying)
+                {
+                    Song.Play();
+                }
+            }
             return true;
         }
     }
