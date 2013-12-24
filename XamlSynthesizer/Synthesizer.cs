@@ -32,26 +32,27 @@ namespace XamlSynthesizer
             set { SetValue(SamplingRateProperty, value); }
         }
 
-        public static readonly DependencyProperty TracksProperty =
-            DependencyProperty.Register("Tracks", typeof(TrackCollection), typeof(Song), new PropertyMetadata(null));
-        public static readonly DependencyProperty SamplingRateProperty =
-            DependencyProperty.Register("SamplingRate", typeof(int), typeof(Song), new PropertyMetadata(44100));
-
         public int Tempo
         {
             get { return (int)GetValue(TempoProperty); }
             set { SetValue(TempoProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Tempo.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TracksProperty =
+            DependencyProperty.Register("Tracks", typeof(TrackCollection), typeof(Song), new PropertyMetadata(null));
+        public static readonly DependencyProperty SamplingRateProperty =
+            DependencyProperty.Register("SamplingRate", typeof(int), typeof(Song), new PropertyMetadata(44100));
         public static readonly DependencyProperty TempoProperty =
             DependencyProperty.Register("Tempo", typeof(int), typeof(Song), new PropertyMetadata(120));
 
+        public bool IsPlaying { get; private set; }
 
         public void Play()
         {
+            if(IsPlaying) return;
             var sequencer = new Sequencer(Tracks, SamplingRate, Tempo);
-            sequencer.Run();
+            sequencer.Run(this);
+            IsPlaying = true;
         }
 
         private class Sequencer
@@ -134,16 +135,16 @@ namespace XamlSynthesizer
                 activeTracks = tracks.Count;
             }
 
-            public void Run()
+            public void Run(Song song)
             {
                 //timer = new DispatcherTimer();
                 //timer.Interval = TimeSpan.FromMilliseconds(tick);
                 //timer.Tick += Update;
                 //timer.Start();
-                Task.Run(() => Update(null, null));
+                Task.Run(() => Update(song, null));
             }
 
-            private async void Update(object a, object b)
+            private async void Update(Song song, object b)
             {
                 //if (activeTracks == 0)
                 //{
@@ -241,6 +242,7 @@ namespace XamlSynthesizer
                     renderer.AppendBuffer(buffer, false);
                     await Task.Delay(tick * 10);
                 }
+                song.IsPlaying = false;
             }
 
             static string Notes = "CDEFGAB";
