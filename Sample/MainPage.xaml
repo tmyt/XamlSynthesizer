@@ -1,0 +1,156 @@
+﻿<Page
+    x:Class="Sample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:xamlSynthesizer="using:XamlSynthesizer"
+    xmlns:behaviors="using:XamlSynthesizer.Behaviors"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <xamlSynthesizer:Voice x:Key="Piano">
+            <xamlSynthesizer:Parameter Source="Op1" Target="Op1" Value="0.5"/>
+        </xamlSynthesizer:Voice>
+
+        <xamlSynthesizer:Song x:Key="Bgm1" x:Name="test" Tempo="160">
+            <xamlSynthesizer:Track Voice="{StaticResource Piano}">
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="QuarterNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="QuarterNote"/>
+
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D5,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G4,D4" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="A4,D4" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="QuarterNote"/>
+                <xamlSynthesizer:Rest Length="QuarterNote" />
+
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,D4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,D4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="SixtheenthNote"/>
+                
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="A4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="A4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="A4,F4" Length="QuarterNote"/>
+                <xamlSynthesizer:Tone Scale="D5,F4" Length="QuarterNote"/>
+
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="QuarterNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="QuarterNote"/>
+
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D5,G4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G4,D4" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="A4,D4" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="QuarterNote"/>
+                <xamlSynthesizer:Rest Length="QuarterNote" />
+                
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="C5,E4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,D4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,D4" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="B4,G4" Length="SixtheenthNote"/>
+                
+                <xamlSynthesizer:Tone Scale="D5,F4#" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D5,F4#" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C5,F4#" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="A4,F4#" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G4" Length="QuarterNote" Flags="Dotted"/>
+            </xamlSynthesizer:Track>
+            <xamlSynthesizer:Track>
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="QuarterNote"/>
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="QuarterNote"/>
+
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B2,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="B2,G2" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="C3,G2" Length="SixtheenthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="D3,G2" Length="QuarterNote"/>
+                <xamlSynthesizer:Rest Length="QuarterNote" />
+
+                <xamlSynthesizer:Tone Scale="C2,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C2,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C2,G2" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="C2,G2" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="G1,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G1,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G1,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="SixtheenthNote"/>
+
+                <xamlSynthesizer:Tone Scale="C3#,E2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C3#,E2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C3#,A1" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C3#,A1" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D3,D2" Length="QuarterNote"/>
+                <xamlSynthesizer:Tone Scale="C3,D2" Length="QuarterNote"/>
+
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="QuarterNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="QuarterNote"/>
+
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,B2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,B2" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="G2,C3" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="QuarterNote"/>
+                <xamlSynthesizer:Rest Length="QuarterNote" />
+
+                <xamlSynthesizer:Tone Scale="C2,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C2,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="C2,G2" Length="EighthNote" Flags="Dotted"/>
+                <xamlSynthesizer:Tone Scale="G1,G2" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="G1,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G1,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,G2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="SixtheenthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,D3" Length="SixtheenthNote"/>
+
+                <xamlSynthesizer:Tone Scale="D2,D3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D2,D3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D2,B2" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="D2,C3" Length="EighthNote"/>
+                <xamlSynthesizer:Tone Scale="G2,B2" Length="QuarterNote" Flags="Dotted"/>
+            </xamlSynthesizer:Track>
+        </xamlSynthesizer:Song>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="Play" Click="ButtonBase_OnClick">
+            <!--<interactivity:Interaction.Behaviors>
+                <core:EventTriggerBehavior>
+                    <behaviors:PlaySongAction Song="{StaticResource Bgm1}"/>
+                </core:EventTriggerBehavior>
+            </interactivity:Interaction.Behaviors>-->
+        </Button>
+    </Grid>
+</Page>
